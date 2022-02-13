@@ -1,0 +1,128 @@
+******** Create Books Table ***************
+CREATE TABLE "books" (
+	"rowid"	INTEGER NOT NULL UNIQUE,
+	"title"	TEXT NOT NULL,
+	"category"	INTEGER NOT NULL,
+	"writer"	TEXT NOT NULL,
+	"ISBN"	TEXT NOT NULL,
+	"quantity"	INTEGER NOT NULL,
+	"lastrented"	TEXT,
+	"lastrenter"	INTEGER,
+	PRIMARY KEY("rowid" AUTOINCREMENT)
+);
+
+
+****************Create Members Table *******************
+CREATE TABLE "members" (
+	"rowid"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT NOT NULL,
+	"surname"	TEXT NOT NULL,
+	"address1"	REAL NOT NULL,
+	"address2"	TEXT,
+	"address3"	TEXT,
+	"phone"	TEXT NOT NULL,
+	"email"	TEXT NOT NULL,
+	"memberid"	TEXT NOT NULL,
+	"age"	INTEGER,
+	"profession"	TEXT,
+	"lastvisit"	TEXT,
+	"lastbook"	TEXT,
+	"prefcat"	INTEGER,
+	PRIMARY KEY("rowid" AUTOINCREMENT)
+);
+
+
+
+
+****************Create Rent Table *******************
+CREATE TABLE "rent" (
+	"rowid"	INTEGER NOT NULL UNIQUE,
+	"date"	TEXT NOT NULL,
+	"member"	INTEGER NOT NULL,
+	"book"	INTEGER NOT NULL,
+	"returndate"	TEXT NOT NULL,
+	PRIMARY KEY("rowid" AUTOINCREMENT)
+);
+
+
+
+****************Create Categories Table *******************
+CREATE TABLE "categories" (
+	"rowid"	INTEGER NOT NULL UNIQUE,
+	"title"	TEXT NOT NULL,
+	"altcat"	INTEGER,
+	"quantity"	INTEGER NOT NULL,
+	PRIMARY KEY("rowid" AUTOINCREMENT)
+);
+
+
+
+
+****************Fill Categories Table *******************
+Insert into categories (title, quantity) 
+Values
+("Action and adventure",0),
+("Alternate history",0),
+("Anthology",0),
+("Art/architecture",0),
+("Autobiography",0),
+("Biography",0),
+("Business/economics",0),
+("Chick lit",0),
+("Children's",0),
+("Classic",0),
+("Comic book",0),
+("Coming-of-age",0),
+("Cookbook",0),
+("Crafts/hobbies",0),
+("Crime",0),
+("Diary",0),
+("Dictionary",0),
+("Drama",0),
+("Encyclopedia",0),
+("Fairytale",0),
+("Fantasy",0),
+("Graphic novel",0),
+("Guide",0),
+("Health/fitness",0),
+("Historical fiction",0),
+("History",0),
+("Home and garden",0),
+("Horror",0),
+("Humor",0),
+("Journal",0),
+("Math",0),
+("Memoir",0),
+("Mystery",0),
+("Paranormal romance",0),
+("Philosophy",0),
+("Picture book",0),
+("Poetry",0),
+("Political thriller",0),
+("Prayer",0),
+("Religion, spirituality, and new age",0),
+("Review",0),
+("Romance",0),
+("Satire",0),
+("Science",0),
+("Science fiction",0),
+("Self help",0),
+("Short story",0),
+("Sports and leisure",0),
+("Suspense",0),
+("Textbook",0),
+("Thriller",0),
+("Travel",0),
+("True crime",0),
+("True crime",0),
+("Western",0),
+("Young adult",0);
+
+
+
+
+
+
+
+
+
